@@ -13,7 +13,7 @@ optional arguments:
   -h, --help  show this help message and exit
   -e          Print only when keywords "suppe" or "eintopf" are found
   -d D        Specify a custom date in the format 'YYYY-MM-DD'
-  -c          Color the meals according to -e (red) and Mayo-compatibilirt
+  -c          Color the meals according to -e (red) and Mayo-compatibility
 ```
 ## Example
 ![](doc/mensa.jpg)
