@@ -26,9 +26,11 @@ optional arguments:
    ```bash
    git clone https://github.com/Jocho-Smith/campo-mensa-script.git
    ```
-2. Move `mensa` to a place that is listed when you execute `echo $PATH` (for user specific use for e.g. in `~/.local/bin/` )
+2. Move `mensa` to a place that is listed when you execute `echo $PATH` (for user specific use `~/.local/bin/` )
 
-3. Check for the correct permissions/execution
+3. Modify the path inside `mensa` to the location of the `mensa.py`
+
+4. Check for the correct permissions/execution
 
    ```bash
    chmod +x /path/to/file/bin/mensa
