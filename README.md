@@ -7,7 +7,7 @@ The Mensa script is a tool for fetching and filtering meal information from a we
 schmidt@admin-02:~$ mensa --help
 usage: mensa.py [-h] [-e] [-d D] [-c]
 
-This script returns the meals of the today in the Campo Mensa
+This script returns the meals of today in the Campo Mensa
 
 optional arguments:
   -h, --help  show this help message and exit
