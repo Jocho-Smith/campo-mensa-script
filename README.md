@@ -14,10 +14,14 @@ The Mensa script is a tool for fetching and filtering meal information from a we
    ```
 2. Move `mensa` to a place that is listed when you execute `echo $PATH` (for user specific use for e.g. in `~/.local/bin/` )
 
-3. Check for the correct permissions 
+3. Check for the correct permissions/execution
+
+   ```bash
+   chmod +x /path/to/file/bin/mensa
+   ```
 
 
 ## Acknowledgments
 - Beautiful Soup - HTML parsing library used in this script.
 - My good friend CV for the inspiration https://github.com/civviGH
-- Felix (account?)
+- Felix (github account?)
