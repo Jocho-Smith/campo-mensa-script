@@ -37,7 +37,7 @@ parser = argparse.ArgumentParser(description="This script returns the meals of t
 # Add optional arguments
 parser.add_argument("-e", action="store_true", help="Print only when keywords \"suppe\" or \"eintopf\" are found")
 parser.add_argument("-d", type=str, help="Specify a custom date in the format 'YYYY-MM-DD'")
-parser.add_argument("-c", action="store_true", help="Color the meals according to -e (red) and Mayo-compatibilirt")
+parser.add_argument("-c", action="store_true", help="Color the meals according to -e (red) and Mayo-compatibility")
 
 # Parse the arguments
 args = parser.parse_args()
