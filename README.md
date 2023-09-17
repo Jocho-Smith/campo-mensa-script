@@ -3,6 +3,19 @@
 The Mensa script is a tool for fetching and filtering meal information from a website and printing it. It provides options to filter meals based on keywords and allows you to specify a custom date.
 
 ## Usage
+```
+schmidt@admin-02:~$ mensa --help
+usage: mensa.py [-h] [-e] [-d D] [-c]
+
+This script returns the meals of the today in the Campo Mensa
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -e          Print only when keywords "suppe" or "eintopf" are found
+  -d D        Specify a custom date in the format 'YYYY-MM-DD'
+  -c          Color the meals according to -e (red) and Mayo-compatibilirt
+```
+## Example
 ![](doc/mensa.jpg)
 
 
