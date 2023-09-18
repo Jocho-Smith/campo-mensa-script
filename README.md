@@ -39,5 +39,5 @@ optional arguments:
 
 ## Acknowledgments
 - Beautiful Soup - HTML parsing library used in this script.
-- My good friend civvi for the inspiration https://github.com/civviGH
-- Felix (github account?)
+- My good friend [civvi](https://github.com/civviGH) for the inspiration 
+- [Felix R.](https://github.com/reeelix) for the insights of the web-page 
