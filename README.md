@@ -40,9 +40,6 @@ Note that this scripts output goes directly to STDOUT, since it is intended to b
    chmod +x /path/to/file/bin/mensa
    ```
 
-## Requirements
-- BeautifulSoup 
-
 ## Acknowledgments
 - Beautiful Soup - HTML parsing library used in this script.
 - My good friend [civvi](https://github.com/civviGH) for the inspiration 
