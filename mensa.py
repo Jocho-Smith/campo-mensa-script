@@ -1,29 +1,27 @@
 from bs4 import BeautifulSoup
-import subprocess
 from datetime import datetime
 import argparse
-
+import requests
 
 
 class bcolors:
-        RESET = "\x1b[0m"
-        RED = "\x1b[31m"
-        ERROR = "\x1b[5m\x1b[31m"
-        MAYO = "\x1b[107m\x1b[30m"
+    RESET = "\x1b[0m"
+    RED = "\x1b[31m"
+    ERROR = "\x1b[5m\x1b[31m"
+    MAYO = "\x1b[107m\x1b[30m"
+
 
 MAYODISHES = [
-        "herzoginkartoffeln",
-        "kroketten",
-        "kartoffelkroketten",
-        "pommesfrites",
-        "bratkartoffeln",
-        "potatowedges",
-        "kartoffelbälchen", #this is to cover a typo on the mensa webseite.... bälchen..
-        "kartoffelbällchen",
-        "rundekartoffelkroketten",
+    "herzoginkartoffeln",
+    "kroketten",
+    "kartoffelkroketten",
+    "pommesfrites",
+    "bratkartoffeln",
+    "potatowedges",
+    "kartoffelbälchen",  # this is to cover a typo on the mensa webseite.... bälchen..
+    "kartoffelbällchen",
+    "rundekartoffelkroketten",
 ]
-
-
 
 # Get the current date
 current_date = datetime.now().strftime("%Y-%m-%d")
@@ -47,20 +45,17 @@ if args.d:
     current_date = args.d
 
 # prepare curl command
-bash_command = f"curl \"https://www.studierendenwerk-bonn.de/index.php?ajax=meals\" -d \"date={current_date}&canteen=2&L=0\""
-
-# Execute the command
-result = subprocess.run(bash_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+result = requests.post(f"https://www.studierendenwerk-bonn.de/index.php?ajax=meals",
+                       data={"date": current_date, "canteen": 2, "L": 0})
 
 # Check if the command was successful
-if result.returncode != 0:
-    print("Command failed with error:")
-    print(result.stderr)
+if result.status_code != 200:
+    print("Request failed with error:")
+    print(result.content)
     exit(1)
 
 # Import the HTML into a parser
-soup = BeautifulSoup(result.stdout, 'html.parser')
-
+soup = BeautifulSoup(result.content, 'html.parser')
 
 
 # Function to check if a string contains any of the keywords
@@ -70,8 +65,10 @@ def contains_keyword(string, keywords):
             return True
     return False
 
+
 print(f"The meal for {current_date}:")
 print()
+
 
 # Function to do fancy colored printing
 def colored_print(text):
@@ -81,7 +78,6 @@ def colored_print(text):
         print(f"{bcolors.MAYO}{text}{bcolors.RESET}")
     else:
         print(text)
-
 
 
 # Print 'h5_tag' content based on the -e argument
@@ -98,5 +94,3 @@ for h5_tag in soup.find_all('h5'):
             colored_print(text)
         else:
             print(text)
-
-
