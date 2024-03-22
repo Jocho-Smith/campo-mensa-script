@@ -5,7 +5,7 @@ PYTHON_SCRIPT_NAME = mensa.py
 BASH_SCRIPT_NAME = mensa
 REQUIREMENTS_FILE = requirements.txt
 REPO_URL := https://github.com/Jocho-Smith/campo-mensa-script.git
-INSTALL_PATH := $(pwd)
+INSTALL_PATH := $(shell pwd)
 
 .PHONY: all install clean
 
@@ -25,7 +25,7 @@ move:
 	cp $(PYTHON_SCRIPT_NAME) $(PYTHON_SCRIPT_DIR)
 	# Create bash script
 	echo "#!/bin/bash" > $(BASH_SCRIPT_NAME)
-	echo "source $(VENV_DIR)/bin/activate" >> $(BASH_SCRIPT_NAME)
+	echo "source $(INSTALL_PATH)/venv/bin/activate" >> $(BASH_SCRIPT_NAME)
 	echo "python3 $(PYTHON_SCRIPT_DIR)/$(PYTHON_SCRIPT_NAME) X1" >> $(BASH_SCRIPT_NAME)
 	chmod +x $(BASH_SCRIPT_NAME)
 	# replace the X1
@@ -40,4 +40,3 @@ clean:
 	rm -rf $(VENV_DIR)
 	rm $(PYTHON_SCRIPT_DIR)/$(PYTHON_SCRIPT_NAME)
 	rm $(BASH_SCRIPT_DIR)/$(BASH_SCRIPT_NAME)
-	# rm -rf $(INSTALL_PATH)
