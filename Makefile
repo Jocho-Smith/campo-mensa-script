@@ -4,7 +4,6 @@ VENV_DIR = ./venv
 PYTHON_SCRIPT_NAME = mensa.py
 BASH_SCRIPT_NAME = mensa
 REQUIREMENTS_FILE = requirements.txt
-REPO_URL := https://github.com/Jocho-Smith/campo-mensa-script.git
 INSTALL_PATH := $(pwd)
 
 .PHONY: all install clean
@@ -12,9 +11,6 @@ INSTALL_PATH := $(pwd)
 all: install
 
 install: move modify_permissions
-
-clone:
-	git clone $(REPO_URL) $(pwd)
 
 move:
 	# Create a virtual environment
@@ -40,4 +36,3 @@ clean:
 	rm -rf $(VENV_DIR)
 	rm $(PYTHON_SCRIPT_DIR)/$(PYTHON_SCRIPT_NAME)
 	rm $(BASH_SCRIPT_DIR)/$(BASH_SCRIPT_NAME)
-	# rm -rf $(INSTALL_PATH)
