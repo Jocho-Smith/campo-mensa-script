@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Set the path to your Python script
-PYTHON_SCRIPT="/home/schmidt/mensa.py"
-
-# Run the Python script with the same arguments as passed to this script
-python3 "$PYTHON_SCRIPT" "$@"
