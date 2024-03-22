@@ -25,20 +25,14 @@ Note that this scripts output goes directly to STDOUT, since it is intended to b
 
 ## Installation (Linux)
 
-1. Clone the repository to your local machine:
+Clone the repository to your local machine, enter the folder and run `make`:
 
    ```bash
    git clone https://github.com/Jocho-Smith/campo-mensa-script.git
+   cd campo-mensa-script
+   make
    ```
-2. Move `mensa` to a place that is listed when you execute `echo $PATH` (for user specific use `~/.local/bin/` )
 
-3. Modify the path inside `mensa` to the location of the `mensa.py`
-
-4. Check for the correct permissions/execution
-
-   ```bash
-   chmod +x /path/to/file/bin/mensa
-   ```
 
 ## Acknowledgments
 - Beautiful Soup - HTML parsing library used in this script.
