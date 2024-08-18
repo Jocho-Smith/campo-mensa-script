@@ -16,6 +16,7 @@ MAYODISHES = [
     "kroketten",
     "kartoffelkroketten",
     "pommesfrites",
+    "frites",
     "Pommes-frites",
     "bratkartoffeln",
     "potatowedges",
