@@ -16,6 +16,7 @@ MAYODISHES = [
     "kroketten",
     "kartoffelkroketten",
     "pommesfrites",
+    "Pommes-frites",
     "bratkartoffeln",
     "potatowedges",
     "kartoffelbälchen",  # this is to cover a typo on the mensa webseite.... bälchen..
